@@ -27,7 +27,8 @@
   "dependencies": {
     "leaflet": "^0.7.7",
     "sandboxed-module": "^2.0.3",
-    "server-components": "^0.2.1"
+    "server-components": "^0.2.1",
+    "server-components-static": "^0.1.0"
   },
   "devDependencies": {
     "express": "^4.14.0"

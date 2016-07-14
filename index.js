@@ -1,4 +1,5 @@
 var components = require("server-components");
+var componentsStatic = require("server-components-static");
 
 var SandboxedModule = require('sandboxed-module');
 var leaflet = SandboxedModule.require('leaflet', {
@@ -18,6 +19,9 @@ var leaflet = SandboxedModule.require('leaflet', {
 
 var LeafletMapElement = components.newElement();
 LeafletMapElement.createdCallback = function (document) {
+  componentsStatic.includeCSS(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
+  componentsStatic.includeCSS(document, "/leaflet-map-component.css");
+
   var L = leaflet(new components.dom.Window(), document);
 
   this.clientWidth = 500;

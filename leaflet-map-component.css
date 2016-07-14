@@ -1,0 +1,9 @@
+leaflet-map {
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+
+.leaflet-tile {
+    visibility: visible;
+}

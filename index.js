@@ -31,7 +31,7 @@ LeafletMapElement.createdCallback = function (document) {
   var long = this.getAttribute("long");
   var zoom = this.getAttribute("zoom");
 
-  var myMap = L.map(this).setView([lat, long], zoom);
+  var myMap = L.map(this, { zoomControl: false }).setView([lat, long], zoom);
   L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'

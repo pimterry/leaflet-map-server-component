@@ -8,7 +8,11 @@ var html = `
 <html>
 <head></head>
 <body>
-    <leaflet-map lat="41.3851" long="2.1734" zoom="12"></leaflet-map>
+    <leaflet-map lat="41.3851" long="2.1734" zoom="12">
+        <leaflet-marker lat="41.4036" long="2.1744"></leaflet-marker>
+        <leaflet-marker lat="41.4225" long="2.1186"></leaflet-marker>
+        <leaflet-marker lat="41.3640" long="2.1675"></leaflet-marker>
+    </leaflet-map>
 </body>
 </html>
 `;

@@ -13,7 +13,8 @@ module.exports = SandboxedModule.require('leaflet', {
           var navigator = window.navigator;
 
           ${source}
-
+          
+          window.L.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet/v0.7.7/images";
           return window.L.noConflict();
         }`;
       }

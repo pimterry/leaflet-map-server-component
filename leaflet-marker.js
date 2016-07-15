@@ -14,8 +14,6 @@ var LeafletMarkerElement = components.newElement();
 LeafletMarkerElement.createdCallback = function (document) {
   var mapElement = getClosest(this, 'leaflet-map');
 
-  mapElement.L.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet/v0.7.7/images";
-
   var lat = this.getAttribute("lat");
   var long = this.getAttribute("long");
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "sleep 1 && open http://localhost:3000 & node demo.js"
+    "test": "mocha --require intelli-espower-loader",
+    "dev": "(sleep 2 && open http://localhost:3000) & nodemon demo.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,10 @@
     "server-components-static": "^0.1.0"
   },
   "devDependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
+    "power-assert": "^1.4.1"
   }
 }

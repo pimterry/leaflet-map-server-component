@@ -30,6 +30,6 @@ components.renderPage(html).then(() => {
 // Start a server rendering on demand
 app.get('/', (req, res) => components.renderPage(html)
                                      .then((output) => res.send(output))
-                                     .catch((err) => res.status(500).send(`Failed:<br/>${err}`)));
+                                     .catch((err) => res.status(500).send(`Failed:<pre>${err.stack}</pre>`)));
 app.use(express.static('.'));
 app.listen(3000, () => console.log("Server listening on 3000"));

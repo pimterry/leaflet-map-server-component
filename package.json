@@ -1,7 +1,7 @@
 {
   "name": "leaflet-map-server-component",
   "version": "0.1.0",
-  "description": "",
+  "description": "A leaflet map server component",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require intelli-espower-loader",

@@ -1,6 +1,5 @@
 var components = require("server-components");
 var componentsStatic = require("server-components-static");
-var leaflet = require("./leaflet");
 
 function getClosest(start, elementSelector) {
   var el = start;

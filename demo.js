@@ -17,12 +17,16 @@ var html = `
 </html>
 `;
 
+// Do an initial render before requests, to check whether it works
 components.renderPage(html).then(() => {
     console.log("Initial render successful");
 }).catch((err) => {
     console.error("Error on initial render", err);
 });
 
-app.get('/', (req, res) => components.renderPage(html).then((output) => res.send(output)));
+// Start a server rendering on demand
+app.get('/', (req, res) => components.renderPage(html)
+                                     .then((output) => res.send(output))
+                                     .catch((err) => res.status(500).send(`Failed:<br/>${err}`)));
 app.use(express.static('.'));
 app.listen(3000, () => console.log("Server listening on 3000"));

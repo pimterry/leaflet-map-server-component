@@ -1,5 +1,5 @@
 var components = require("server-components");
-require("./index.js");
+require("./src/index.js");
 
 var express = require("express");
 var app = express();

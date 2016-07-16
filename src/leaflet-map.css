@@ -3,7 +3,3 @@ leaflet-map {
     height: 500px;
     display: block;
 }
-
-.leaflet-tile {
-    visibility: visible;
-}

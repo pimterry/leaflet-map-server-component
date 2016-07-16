@@ -24,4 +24,3 @@ Want to see it in action right now? Clone this repo and run `npm install && npm 
 
 - [ ] Map shape overlays
 - [ ] Serve static content server-agnostically (with [server-components-static](https://github.com/pimterry/server-components-static))
-- [ ] Isomorphism: server and web components, so you can server-render this then progressively enhance it client-side too

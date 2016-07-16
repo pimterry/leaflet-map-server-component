@@ -4,8 +4,11 @@ var leaflet = require("./leaflet");
 
 var LeafletMapElement = components.newElement();
 LeafletMapElement.createdCallback = function (document) {
-  componentsStatic.includeCSS(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
   componentsStatic.includeCSS(document, "/leaflet-map.css");
+  componentsStatic.includeCSS(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
+
+  componentsStatic.includeScript(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js");
+  componentsStatic.includeScript(document, "/leaflet-map-browser.js");
 
   var L = leaflet(new components.dom.Window(), document);
 

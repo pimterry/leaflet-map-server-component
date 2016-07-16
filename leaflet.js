@@ -11,9 +11,11 @@ module.exports = SandboxedModule.require('leaflet', {
         return `
         module.exports = function (window, document) {
           var navigator = window.navigator;
+          window.outerWidth = 2000;
+          window.outerHeight = 2000;
 
           ${source}
-          
+
           window.L.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet/v0.7.7/images";
           return window.L.noConflict();
         }`;

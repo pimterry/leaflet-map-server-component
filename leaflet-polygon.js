@@ -15,7 +15,7 @@ LeafletPolygonElement.createdCallback = function (document) {
   var mapElement = getClosest(this, 'leaflet-map');
 
   var pointsString = this.getAttribute("points");
-  var points = pointsString.split(/[^0-9]/).filter((x) => x !== "").map((p) => parseInt(p, 10));
+  var points = pointsString.split(/[^0-9\.]/).filter((x) => x !== "").map((p) => parseFloat(p));
 
   var coordPairs = _.zip(points.filter((p, i) => i % 2 === 0),
                          points.filter((p, i) => i % 2 !== 0));

@@ -13,16 +13,16 @@
 
   LeafletMapElement.createdCallback = function (document) {
     componentsStatic.includeCSS(document, "/src/leaflet-map.css");
-    componentsStatic.includeCSS(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
+    componentsStatic.includeCSS(document, "node_modules/leaflet/dist/leaflet.css");
 
     // Client-side scripts for interactivity
-    componentsStatic.includeScript(document, "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js");
+    componentsStatic.includeScript(document, "node_modules/leaflet/dist/leaflet.js");
     componentsStatic.includeScript(document, "/server-components-for-web.js");
     componentsStatic.includeScript(document, "/src/leaflet-map.js");
 
     var L = components.onServer ? leafletOrConstructor(new components.dom.Window(), document) :
                                   leafletOrConstructor
-    L.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet/v0.7.7/images";
+    L.Icon.Default.imagePath = "node_modules/leaflet/dist/images";
 
     // Server-side we need to explicitly specify a size to render, since we don't have a window.
     if (components.onServer) {

@@ -5,7 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --require intelli-espower-loader",
-    "dev": "(sleep 2 && open http://localhost:3000) & nodemon demo.js"
+    "dev": "(sleep 2 && open http://localhost:3000) & nodemon demo.js",
+    "release:patch": "np patch",
+    "release:minor": "np minor",
+    "release:major": "np major"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
+    "np": "^2.6.0",
     "power-assert": "^1.4.1",
     "send": "^0.14.1"
   }

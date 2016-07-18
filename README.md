@@ -24,4 +24,3 @@ Want to see it in action right now? Clone this repo and run `npm install && npm 
 
 - [ ] Map shape overlays
 - [ ] Magically autoresize the map when rendering
-- [ ] Serve static content server-agnostically (with [server-components-static](https://github.com/pimterry/server-components-static))

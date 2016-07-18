@@ -15,6 +15,15 @@ window.components = {
 };
 
 window.componentsStatic = {
+    forComponent: function (componentName) {
+        return {
+            setPath: function () { },
+            getPath: function () { },
+            getUrl: function (path) {
+                return "/components/" + componentName + "/" + path;
+            }
+        };
+    },
     includeCSS: function (document, url) {
     },
     includeScript: function (document, url) {

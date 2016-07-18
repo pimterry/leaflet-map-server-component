@@ -12,20 +12,23 @@
   var LeafletMapElement = components.newElement();
 
   LeafletMapElement.createdCallback = function (document) {
-    componentsStatic.includeCSS(document, "/src/leaflet-map.css");
-    componentsStatic.includeCSS(document, "node_modules/leaflet/dist/leaflet.css");
-
-    // Client-side scripts for interactivity
-    componentsStatic.includeScript(document, "node_modules/leaflet/dist/leaflet.js");
-    componentsStatic.includeScript(document, "/server-components-for-web.js");
-    componentsStatic.includeScript(document, "/src/leaflet-map.js");
-
     var L = components.onServer ? leafletOrConstructor(new components.dom.Window(), document) :
-                                  leafletOrConstructor
-    L.Icon.Default.imagePath = "node_modules/leaflet/dist/images";
+                                  leafletOrConstructor;
 
-    // Server-side we need to explicitly specify a size to render, since we don't have a window.
+    var leafletContent = componentsStatic.forComponent("leaflet");
+    var mapContent = componentsStatic.forComponent("leaflet-map");
+
+    L.Icon.Default.imagePath = leafletContent.getUrl("images");
+    componentsStatic.includeCSS(document, mapContent.getUrl("leaflet-map.css"));
+    componentsStatic.includeCSS(document, leafletContent.getUrl("leaflet.css"));
+
+    // Add client-side scripts too, for later potential interactivity
+    componentsStatic.includeScript(document, "/server-components-for-web.js");
+    componentsStatic.includeScript(document, leafletContent.getUrl("leaflet.js"));
+    componentsStatic.includeScript(document, mapContent.getUrl("leaflet-map.js"));
+
     if (components.onServer) {
+      // Server-side we need to explicitly specify a size to render, since we don't have a window.
       this.clientWidth = 500;
       this.clientHeight = 500;
     }

@@ -1,4 +1,7 @@
 var components = require("server-components");
+var componentsStatic = require("server-components-static");
+var send = require("send");
+
 require("./src/index.js");
 
 var express = require("express");
@@ -28,5 +31,12 @@ components.renderPage(html).then(() => {
 app.get('/', (req, res) => components.renderPage(html)
                                      .then((output) => res.send(output))
                                      .catch((err) => res.status(500).send(`Failed:<br/>${err}`)));
+
+// TODO: Turn this into standalone express middleware.
+app.get(/\/components\/([^\/]+)\/(.+)/, (req, res) => {
+    var filePath = componentsStatic.getPath(req.params[0], req.params[1]);
+    send(req, filePath).pipe(res);
+});
+
 app.use(express.static('.'));
 app.listen(3000, () => console.log("Server listening on 3000"));
